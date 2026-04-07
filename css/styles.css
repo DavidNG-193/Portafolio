@@ -180,7 +180,8 @@ section {
   border-width: 5px;
   border-color: var(--muted);
   width: 10%;
-  height: 22%;
+  height: auto;
+  display: block;
   position: absolute;
   right: 100px;
   top: 270px;
@@ -506,3 +507,87 @@ footer p {
 h1         { animation: fadeUp 0.6s 0.1s ease both; }
 .hero-sub  { animation: fadeUp 0.6s 0.2s ease both; }
 .hero-ctas { animation: fadeUp 0.6s 0.3s ease both; }
+
+/* ── FORMULARIO DE CONTACTO ── */
+#contact-form {
+  margin: 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+}
+
+.form-group input,
+.form-group textarea {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: rgba(200, 245, 80, 0.5);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--muted);
+}
+
+#contact-form button {
+  background: var(--accent);
+  color: #0d0d0d;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 100px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  width: fit-content;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+#contact-form button:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+#contact-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#form-status {
+  font-size: 0.9rem;
+  min-height: 1.4rem;
+}
+
+#form-status.success {
+  color: var(--accent);
+}
+
+#form-status.error {
+  color: #ff6b6b;
+}

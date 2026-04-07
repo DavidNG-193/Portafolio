@@ -205,19 +205,44 @@
   </section>
 
 
-  <!-- ── CONTACTO ── -->
-  <section id="contacto">
-    <div class="contact-wrapper">
-      <div class="section-label">Contacto</div>
-      <h2>Hablemos</h2>
-      <p>¿Te gusta mi trabajo? ¿Quieres darme una oportunidad? Escríbeme!</p>
-      <div class="contact-links">
-        <a href="mailto:davidng.dev@gmail.com" class="contact-chip">✉️ Gmail</a>
-        <a href="https://github.com/DavidNG-193" class="contact-chip">⌨️ GitHub</a>
-        <a href="https://linkedin.com/in/tuusuario" class="contact-chip">💼 LinkedIn</a>
+<!-- ── CONTACTO ── -->
+<section id="contacto">
+  <div class="contact-wrapper">
+    <div class="section-label">Contacto</div>
+    <h2>Hablemos</h2>
+    <p>¿Tienes un proyecto, una duda o simplemente quieres conectar? Escríbeme.</p>
+
+    <form id="contact-form">
+
+      <div class="form-group">
+        <label for="from_name">Nombre</label>
+        <input type="text" id="from_name" name="from_name" placeholder="Tu nombre" required />
       </div>
+
+      <div class="form-group">
+        <label for="from_email">Email</label>
+        <input type="email" id="from_email" name="from_email" placeholder="tuemail@ejemplo.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" rows="5" placeholder="¿En qué puedo ayudarte?" required></textarea>
+      </div>
+
+      <button type="submit" id="submit-btn">
+        <span id="btn-text">Enviar mensaje →</span>
+      </button>
+
+      <p id="form-status"></p>
+
+    </form>
+
+    <div class="contact-links">
+      <a href="https://github.com/DavidNG-193" class="contact-chip">⌨️ GitHub</a>
+      <a href="https://linkedin.com/in/tuusuario" class="contact-chip">💼 LinkedIn</a>
     </div>
-  </section>
+  </div>
+</section>
 
 
   <!-- ── FOOTER ── -->
@@ -226,5 +251,9 @@
     <p class="footer-status">Disponible para oportunidades ✦</p>
   </footer>
 
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- JavaScript propio -->
+  <script src="js/main.js"></script>
 </body>
 </html>
