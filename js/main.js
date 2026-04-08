@@ -50,3 +50,20 @@ form.addEventListener("submit", function (event) {
     });
 
 });
+
+// ── MENÚ HAMBURGUESA ──
+const navToggle = document.getElementById("nav-toggle");
+const navLinks  = document.getElementById("nav-links");
+
+navToggle.addEventListener("click", function () {
+  navToggle.classList.toggle("active");
+  navLinks.classList.toggle("active");
+});
+
+// Cierra el menú al hacer clic en un enlace
+navLinks.querySelectorAll("a").forEach(function (link) {
+  link.addEventListener("click", function () {
+    navToggle.classList.remove("active");
+    navLinks.classList.remove("active");
+  });
+});

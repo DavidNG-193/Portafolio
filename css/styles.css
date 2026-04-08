@@ -9,9 +9,9 @@
   --bg:      #0d0d0d;
   --bg2:     #141414;
   --bg3:     #1a1a1a;
-  --accent:  #e49a06;
+  --accent:  #ed9e59;
   --text:    #f0ede6;
-  --muted:   #888882;
+  --muted:   #e9d2d0;
   --border:  rgba(255, 255, 255, 0.07);
   --radius:  16px;
 }
@@ -73,6 +73,71 @@ nav {
   color: var(--text);
 }
 
+/* ── MENÚ HAMBURGUESA ── */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Animación al estar abierto — convierte ☰ en ✕ */
+.nav-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    background: rgba(13, 13, 13, 0.97);
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
 
 /* ── HERO ── */
 #hero {
@@ -162,29 +227,24 @@ h1 span {
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(200, 245, 80, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(226, 80, 245, 0.3) 0%, transparent 70%);
   top: -100px;
   right: -100px;
   pointer-events: none;
 }
 
+.perfil-img{
+  width: 10%;
+  position: absolute;
+  height: auto;
+  border-radius:50%;
+  border: 2px solid #ddd;
+  margin-left: 1rem;
+}
 
 /* ── SECCIONES GENERALES ── */
 section {
   padding: 6rem 5%;
-}
-
-.img{
-  border-radius: 80%;
-  border-style: solid;
-  border-width: 5px;
-  border-color: var(--muted);
-  width: 10%;
-  height: auto;
-  display: block;
-  position: absolute;
-  right: 100px;
-  top: 270px;
 }
 
 .section-label {
@@ -343,14 +403,14 @@ h2 {
 }
 
 .project-card:hover {
-  border-color: rgba(200, 245, 80, 0.3);
+  border-color: rgba(236, 204, 235, 0.3);
   transform: translateY(-4px);
 }
 
 .project-img {
   width: 100%;
   height: 180px;
-  background: linear-gradient(135deg, #1e2a1e, #0d1a0d);
+  background: linear-gradient(135deg, #261e2a, #1a0d1a);
   display: flex;
   align-items: center;
   justify-content: center;
